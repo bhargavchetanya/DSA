@@ -11,14 +11,15 @@
  */
 class Solution {
 public:
-    pair<int,int> f(TreeNode*root,int &ans){
+int ans=0;
+    pair<int,int> f(TreeNode*root){
         if(root==NULL)return {0,0};
         int sum=0;
         int count=0;
         pair<int,int> left={0,0};
-        left=f(root->left,ans);
+        left=f(root->left);
         pair<int,int> right={0,0};
-        right=f(root->right,ans);
+        right=f(root->right);
         sum+=root->val+left.first+right.first;
         count=left.second+right.second+1;
         if(sum/count==root->val){
@@ -27,8 +28,7 @@ public:
         return {sum,count};
     }
     int averageOfSubtree(TreeNode* root) {
-        int ans=0;
-        pair<int,int> x=f(root,ans);
+        pair<int,int> x=f(root);
         return ans;
     }
 };
