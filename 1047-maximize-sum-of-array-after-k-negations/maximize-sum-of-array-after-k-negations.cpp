@@ -13,7 +13,7 @@ public:
         else if(i>0){
             if(abs(nums[i])>abs(nums[i-1]))l=i-1;
             else l=i;
-        };
+        }
         while(i>0&&temp>0){
             nums[x]*=-1;
             i--;
