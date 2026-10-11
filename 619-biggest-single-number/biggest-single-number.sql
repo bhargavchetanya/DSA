@@ -5,5 +5,4 @@ FROM(
     FROM MyNumbers
     GROUP BY num
     HAVING freq=1
-    ORDER BY num DESC
 )d;
