@@ -3,7 +3,6 @@ public:
     int minOperations(string s) {
         int n=s.length();
         if(n==2&&s[0]>s[1])return -1;
-
         string temp=s;
         sort(temp.begin(),temp.end());
         if(temp==s)return 0;
