@@ -10,12 +10,9 @@ public:
     
     void renew(string tokenId, int currentTime) {
         auto it=expires_.find(tokenId);
-        if(it==expires_.end())return;
+        if(it==expires_.end());
         else{
-            if(currentTime>=it->second){
-                expires_.erase(it);
-            }
-            else{
+            if(currentTime<it->second){
                 it->second=currentTime+ttl_;
             }
         }
