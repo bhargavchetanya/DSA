@@ -21,7 +21,6 @@ public:
                 while(k<l){
                     if(nums[k]+nums[l]==t2){
                     vector<int>temp={a,b,nums[k],nums[l]};
-                    sort(temp.begin(),temp.end());
                     ans.push_back(temp);
                     k++;
                     l--;
