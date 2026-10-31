@@ -2,22 +2,22 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n=height.size();
-        vector<int>left;
-        vector<int>right;
-        int maxi=INT_MIN;
-        for(int i=0;i<n;i++){
-            maxi=max(maxi,height[i]);
-            left.push_back(maxi);
-        }
-        maxi=INT_MIN;
-        for(int i=n-1;i>=0;i--){
-            maxi=max(maxi,height[i]);
-            right.push_back(maxi);
-        }
-        reverse(right.begin(),right.end());
+        int left=0;
+        int right=n-1;
+        int left_max=0;
+        int right_max=0;
         int ans=0;
-        for(int i=0;i<n;i++){
-            ans+=min(left[i],right[i])-height[i];
+        while(left<right){
+            if(height[left]<height[right]){
+                left_max=max(left_max,height[left]);
+                ans+=left_max-height[left];
+                left++;
+            }
+            else{
+                right_max=max(right_max,height[right]);
+                ans+=right_max-height[right];
+                right--;
+            }
         }
         return ans;
     }
