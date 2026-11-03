@@ -8,7 +8,6 @@ public:
             if(maxi<nums[i]){
                 int diff=-maxi+nums[i];
                 maxi=nums[i];
-                ans+=maxi-nums[i];
                 ans+=diff*i;
             }
             else ans+=maxi-nums[i];
